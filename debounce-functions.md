@@ -2,11 +2,11 @@
 
 ## 问题
 
-你想只执行一个函数一次，在开始或结束把多个连续的调用合并成一个简单的操作
+你想只执行某个函数一次，在开始或结束时把多个连续的调用合并成一个简单的操作。
 
 ## 方案
 
-使用一个命名函数
+使用一个命名函数：
 
 ```
 debounce: (func, threshold, execAsap) ->
@@ -34,5 +34,5 @@ someOtherHandler: (e) ->
 
 ## 讨论
 
-可参阅 John Hann 的优秀博客文章，了解 [JavaScript 去抖动方法](http://unscriptable.com/2009/03/20/debouncing-javascript-methods/)。
+可参阅 John Hann 的博客文章，了解 [JavaScript 去抖动方法](http://unscriptable.com/2009/03/20/debouncing-javascript-methods/)。
 
