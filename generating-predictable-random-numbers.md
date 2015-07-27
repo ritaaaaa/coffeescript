@@ -10,7 +10,7 @@
 
 ```
 class Rand
-  # if created without a seed, uses current time as seed
+  # 如果没有种子创建，使用当前时间作为种子
   constructor: (@seed) ->
     # Knuth and Lewis' improvements to Park and Miller's LCPRNG
     @multiplier = 1664525
@@ -19,24 +19,24 @@ class Rand
     unless @seed? && 0 <= seed < @modulo
       @seed = (new Date().valueOf() * new Date().getMilliseconds()) % @modulo
 
-  # sets new seed value
+  # 设置新的种子值
   seed: (seed) ->
     @seed = seed
 
-  # return a random integer 0 <= n < @modulo
+  # 返回一个随机整数满足 0 <= n < @modulo
   randn: ->
     # new_seed = (a * seed + c) % m
     @seed = (@multiplier*@seed + @offset) % @modulo
 
- # return a random float 0 <= f < 1.0
+ # 返回一个随机浮点满足 0 <= f < 1.0
   randf: ->
     this.randn() / @modulo
 
-  # return a random int 0 <= f < n
+  # 返回一个随机的整数满足 0 <= f < n
   rand: (n) ->
     Math.floor(this.randf() * n)
 
-  # return a random int min <= f < max
+  #返回一个随机的整数满足min <= f < max
   rand2: (min, max) ->
     min + this.rand(max-min)
 ```
@@ -59,5 +59,3 @@ r.randn() % 2
 ```
 
 因为你肯定得不到随机数字。反而，你应该使用 r.rand(2)。
-
-
