@@ -13,7 +13,6 @@
 Array(11).join 'foo'
 
 # => "foofoofoofoofoofoofoofoofoofoo"
-
 ```
 
 ## 为字符串重复方法
@@ -21,9 +20,8 @@ Array(11).join 'foo'
 你也可以在字符串的原型中为其创建方法。它十分简单：
 
 ```
-	# 为所有的字符串添加重复方法，这会重复返回 n 次字符串
-	String::repeat = (n) -> Array(n+1).join(this)
-
+# 为所有的字符串添加重复方法，这会重复返回 n 次字符串
+String::repeat = (n) -> Array(n+1).join(this)
 ```
 
 ## 讨论
