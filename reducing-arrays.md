@@ -1,9 +1,9 @@
-## 归纳数组-Reducing Arrays
+# 归纳数组
 
-### 问题
+## 问题
 你有一个对象数组，想要把它们归纳为一个值，类似于 Ruby 中的 reduce() 和 reduceRight() 。
-### 方案
-可以使用Array的reduce()和reduceRight()方法，再使用一个匿名函数，保持代码清晰易懂。这里归纳可能会像对数值和字符串应用+运算符那么简单。
+## 方案
+可以使用一个匿名函数包含 Array 的 reduce() 和 reduceRight() 方法，保持代码清晰易懂。这里归纳可能会像对数值和字符串应用 + 运算符那么简单。
 ```
 [1,2,3,4].reduce (x,y) -> x + y
 # => 10
@@ -25,6 +25,6 @@ people.reduce (x, y) ->
 # => { alec: 10, bert: 16, chad: 17 }
 ```
 ### 讨论
-Javascript 1.8中引入了reduce 和reduceRight，而Coffeescript为匿名函数提供了简单自然的表达语法。二者配合使用，可以把集合的项合并为组合的结果。
+Javascript 1.8 中引入了 reduce 和 reduceRight ，而 Coffeescript 为匿名函数提供了简单自然的表达语法。二者配合使用，可以把集合的项合并为组合的结果。
 
 
