@@ -9,7 +9,6 @@
 使用下面这个type函数
 
 ```
-
 	type = (obj) ->
     if obj == undefined or obj == null
       return String obj
@@ -24,6 +23,7 @@
       '[object Object]': 'object'
     }
     return classToType[Object.prototype.toString.call(obj)]
+    
 ```
 
 ## 讨论
@@ -33,8 +33,7 @@
 需要注意的是，在某些情况下，只要使用鸭子类型检测及存在运算符就可以不必检测对象的类型了。例如，下面这行代码不会发生异常，它会在 myArray 的确是数组（或者一个带有 push 方法的类数组对象）的情况下向其中推入一个元素，否则什么也不做。
 
 ```
-
 	myArray?.push? myValue
-
+	
 ```
 
