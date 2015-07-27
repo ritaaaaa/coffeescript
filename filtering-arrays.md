@@ -1,7 +1,7 @@
-## 筛选数组
-### 问题
+# 筛选数组
+## 问题
 你想要根据布尔条件来筛选数组。
-### 解决方案
+## 解决方案
 使用 Array.filter (ECMAScript 5)： array = [1..10]
 ```
 array.filter (x) -> x > 5
@@ -24,6 +24,6 @@ gt_five = (x) -> x > 5
 filtered_array = array.filter gt_five
 # => [6,7,8,9,10]
 ```
-### 讨论
+## 讨论
 这个方法与 Ruby 的 Array 的 #select 方法类似。
 
