@@ -9,19 +9,16 @@
 使用“拆分-映射-拼接”模式：先把字符串拆分成单词，然后通过映射来大写单词第一个字母小写其他字母，最后再将转换后的单词拼接成字符串。
 
 ```
-
-	("foo bar baz".split(' ').map (word) -> word[0].toUpperCase() + word[1..-1].toLowerCase()).join ' '
-	# => 'Foo Bar Baz'
+("foo bar baz".split(' ').map (word) -> word[0].toUpperCase() + word[1..-1].toLowerCase()).join ' '
+# => 'Foo Bar Baz'
 
 ```
 
 或者使用列表推导（comprehension），也可以实现同样的结果：
 
 ```
-
-	(word[0].toUpperCase() + word[1..-1].toLowerCase() for word in "foo   bar   baz".split /\s+/).join ' '
-	# => 'Foo Bar Baz'
-
+(word[0].toUpperCase() + word[1..-1].toLowerCase() for word in "foo   bar   baz".split /\s+/).join ' '
+# => 'Foo Bar Baz'
 ```
 
 ## 讨论
@@ -31,9 +28,8 @@
 需要注意的是，“拆分-映射-拼接”模式存在两个问题。第一个问题，只有在文本形式统一的情况下才能有效拆分文本。如果来源字符串中有分隔符包含多个空白符，就需要考虑怎么过滤掉多余的空单词。一种解决方案是使用正则表达式来匹配空白符的串，而不是像前面那样只匹配一个空格：
 
 ```
-
-	("foo    bar    baz".split(/\s+/).map (word) -> word[0].toUpperCase() + word[1..-1].toLowerCase()).join ' '
-	# => 'Foo Bar Baz'
+("foo    bar    baz".split(/\s+/).map (word) -> word[0].toUpperCase() + word[1..-1].toLowerCase()).join ' '
+# => 'Foo Bar Baz'
 
 ```
 
