@@ -11,12 +11,12 @@
 
 ```
 
-	class Zoo
+  class Zoo
   	@MAX_ANIMALS: 50
   	MAX_ZOOKEEPERS: 3
   
   	helpfulInfo: =>
-    "Zoos may contain a maximum of #{@constructor.MAX_ANIMALS} animals and #{@MAX_ZOOKEEPERS} zoo keepers."
+          "Zoos may contain a maximum of #{@constructor.MAX_ANIMALS} animals and #{@MAX_ZOOKEEPERS} zoo keepers."
 
 	Zoo.MAX_ANIMALS
 	# => 50
