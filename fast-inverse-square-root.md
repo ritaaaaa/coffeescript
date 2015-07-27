@@ -8,19 +8,19 @@
 
 在 Quake Ⅲ Arena 的[源代码](ftp://ftp.idsoftware.com/idstuff/source/quake3-1.32b-source.zip)中，这个奇怪的算法对一个幻数进行整数运算，来计算平方根倒数的浮点近似值。
 
-在 CoffeeScript 中，我使用经典原始的变量，以及由 [Chris Lomont](http://www.lomont.org/Math/Papers/2003/InvSqrt.pdf) 发现的新的最优 32 位幻数。除此之外，我还使用 64 位大小的幻数。
+在 CoffeeScript 中，他使用经典原始的变量，以及由 [Chris Lomont](http://www.lomont.org/Math/Papers/2003/InvSqrt.pdf) 发现的新的最优 32 位幻数。除此之外，还使用 64 位大小的幻数。
 
 另一特征是可以通过控制[牛顿迭代法](https://en.wikipedia.org/wiki/Newton%27s_method)的迭代次数来改变其精确度。
 
-相比于传统的，该算法在性能上更胜一筹，归功于使用的机器及其精确度。
+相比于传统的，该算法在性能上更胜一筹，这归功于使用的机器及其精确度。
 
-运行的时候使用 coffee 来编译 script： coffee -c script.coffee
+运行的时候使用 coffee -c script.coffee 来编译 script： 
 
 然后复制粘贴编译的 JS 代码到浏览器的 JavaScript 控制台。
 
 注意：你需要一个支持[类型数组](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)的浏览器
 
-参考文献：   
+参考：   
 1. <ftp://ftp.idsoftware.com/idstuff/source/quake3-1.32b-source.zip>   
 2. <http://www.lomont.org/Math/Papers/2003/InvSqrt.pdf>  
 3. <http://en.wikipedia.org/wiki/Newton%27s_method>  
@@ -38,14 +38,14 @@ Author: Jason Giedymin <jasong _a_t_ apache -dot- org>
 
 在 Quake Ⅲ Arena 的源代码 [1] 中，这个奇怪的算法对一个幻数进行整数运算，来计算平方根倒数的浮点近似值 [5]。
 
-在 CoffeeScript 中，我使用经典原始的变量，以及由 Chris Lomont [2] 发现的新的最优 32 位幻数。除此之外，我还使用 64 位大小的幻数。
+在 CoffeeScript 中，我使用经典原始的变量，以及由 Chris Lomont [2] 发现的新的最优 32 位幻数。除此之外，还使用 64 位大小的幻数。
 
 另一特征是可以通过控制牛顿迭代法 [3] 的迭代次数来改变其精确度。
 
 相比于传统的，该算法在性能上更胜一筹，归功于使用的机器及其精确度。
 
-运行的时候使用 coffee 来编译 script： 
-coffee -c script.coffee
+运行的时候使用 coffee -c script.coffee 来编译 script： 
+
 
 然后复制粘贴编译的 JS 代码到浏览器的 JavaScript 控制台。
 
@@ -91,3 +91,5 @@ testSingle = () ->
 
 testSingle()
 ```
+## 讨论
+问题？
