@@ -1,4 +1,4 @@
-# 克隆对象（深复制）
+# 克隆对象（深度复制）
 
 ## 问题
 
@@ -7,28 +7,38 @@
 ## 解决方案
 
 ```
+clone = (obj) ->
+  if not obj? or typeof obj isnt 'object'
+    return obj
 
-	clone = (obj) ->
-	  if not obj? or typeof obj isnt 'object'
-	    return obj
-	
-	  newInstance = new obj.constructor()
-	
-	  for key of obj
-	    newInstance[key] = clone obj[key]
-	
-	  return newInstance
-	
-	x =
-	  foo: 'bar'
-	  bar: 'foo'
-	
-	y = clone(x)
-	
-	y.foo = 'test'
-	
-	console.log x.foo isnt y.foo, x.foo, y.foo
-	# => true, bar, test
+  if obj instanceof Date
+    return new Date(obj.getTime()) 
+
+  if obj instanceof RegExp
+    flags = ''
+    flags += 'g' if obj.global?
+    flags += 'i' if obj.ignoreCase?
+    flags += 'm' if obj.multiline?
+    flags += 'y' if obj.sticky?
+    return new RegExp(obj.source, flags) 
+
+  newInstance = new obj.constructor()
+
+  for key of obj
+    newInstance[key] = clone obj[key]
+
+  return newInstance
+
+x =
+  foo: 'bar'
+  bar: 'foo'
+
+y = clone(x)
+
+y.foo = 'test'
+
+console.log x.foo isnt y.foo, x.foo, y.foo
+# => true, bar, test
 	
 ```
 
@@ -43,18 +53,16 @@
 下面是一个通过赋值来复制对象的例子：
 
 ```
+x =
+  foo: 'bar'
+  bar: 'foo'
 
-	x =
-	  foo: 'bar'
-	  bar: 'foo'
-	
-	y = x
-	
-	y.foo = 'test'
-	
-	console.log x.foo isnt y.foo, x.foo, y.foo
-	# => false, test, test
-	
+y = x
+
+y.foo = 'test'
+
+console.log x.foo isnt y.foo, x.foo, y.foo
+# => false, test, test
 ```
 
 显然，复制之后修改 y 也就修改了 x。
