@@ -2,7 +2,7 @@
 ### 问题
 你有一个对象数组，想将它们映射到另一个数组，类似于 Python 的列表推导。
 ### 解决方案
-使用列表推导，不要忘记[mapping-arrays]( http://coffeescript-cookbook.github.io/chapters/arrays/mapping-arrays) 。
+使用列表推导，不要忘记 [mapping-arrays]( http://coffeescript-cookbook.github.io/chapters/arrays/mapping-arrays) 。
 ```
 electric_mayhem = [ { name: "Doctor Teeth", instrument: "piano" },
                     { name: "Janice", instrument: "lead guitar" },
