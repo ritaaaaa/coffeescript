@@ -16,7 +16,8 @@
   	MAX_ZOOKEEPERS: 3
   
   	helpfulInfo: =>
-          "Zoos may contain a maximum of #{@constructor.MAX_ANIMALS} animals and #{@MAX_ZOOKEEPERS} zoo keepers."
+       "Zoos may contain a maximum of #{@constructor.MAX_ANIMALS} animals and #{@MAX_ZOOKEEPERS} zoo
+       keepers."
 
 	Zoo.MAX_ANIMALS
 	# => 50
@@ -42,7 +43,7 @@
 
 ### 实例变量
 
-你必须在一个类的方法中才能定义是实例变量（例如性质），在 constructor 结构中初始化你的默认值。
+你必须在一个类的方法中才能定义实例变量（例如属性），在 constructor 结构中初始化你的默认值。
 
 ```
 
@@ -70,7 +71,7 @@
 
 ## 警告！
 
-不要试图在 constructor 外部添加变量（即使在 [elsewhere](http://arcturo.github.io/library/coffeescript/03_classes.html#content) 中提到了，这不会像预期那样运行正确，由于潜在的 JavaScript 的原型概念）。
+不要试图在 constructor 外部添加变量（即使在 [elsewhere](http://arcturo.github.io/library/coffeescript/03_classes.html#content) 中提到了，由于潜在的 JavaScript 的原型概念，这不会像预期那样运行正确，）。
 
 ```
 
