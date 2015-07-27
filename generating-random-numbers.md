@@ -6,8 +6,7 @@
 
 ## 方案
 
-使用 JavaScript 的 Math.random() 来获得浮点数，满足 0<=X<1.0。使用乘法和 Math.floor 得到在一定范围内的数字。
-
+使用 JavaScript 的 Math.random() 来获得浮点数，满足 0<=X<1.0 。使用乘法和 Math.floor 得到在一定范围内的数字。
 ```
 probability = Math.random()
 0.0 <= probability < 1.0
@@ -28,7 +27,6 @@ range = Math.random() * (max - min) + min
 -13 <= range < 42
 # => true
 ```
-
 ## 讨论
 
 对于 JavaScript 来说，它更直接更快。
