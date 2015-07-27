@@ -51,8 +51,8 @@ Array::shuffle ?= ->
 # => [ 3, 1, 5, 6, 4, 8, 2, 9, 7 ]
 ```
 >注意: 虽然它像在 Ruby 语言中相当普遍，但是在 JavaScript 中扩展本地对象通常被认为是不太好的做法 ( 参考: [Maintainable JavaScript: Don’t modify objects you don’t own](http://www.nczonline.net/blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/)    
-正如提到的，以上的代码的添加是十分安全的。它仅仅需要添 Array :: shuffle 如果它不存在，就要添加赋值运算符 (?=) 。这样，我们就不会重写到别人的代码，或是本地浏览器的方式。  
+正如提到的，以上的代码的添加是十分安全的。它仅仅需要添 Array :: shuffle 如果它不存在，就要添加赋值运算符 (? =) 。这样，我们就不会重写到别人的代码，或是本地浏览器的方式。  
 
-同时，如果你认为你会使用很多的实用功能，可以考虑使用一个工具库，像 [ Lo-dash](https://lodash.com/) 。他们有很多功能，像跨浏览器的简洁高效的地图。 [Underscore](http://underscorejs.org/) 也是一个不错的选择。
+>同时，如果你认为你会使用很多的实用功能，可以考虑使用一个工具库，像 [ Lo-dash](https://lodash.com/) 。他们有很多功能，像跨浏览器的简洁高效的地图。 [Underscore](http://underscorejs.org/) 也是一个不错的选择。
 
 
