@@ -8,10 +8,15 @@
 
 下面的方案（仍有需改进的地方）最初在 Robin Houston的博客上被提出来。  
 
-这里给出一些关于该算法和改进方法的链接：   
-*[http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/](http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/) *[http://www.math.rutgers.edu/~erowland/fibonacci](http://www.math.rutgers.edu/~erowland/fibonacci) *[http://jsfromhell.com/classes/bignumber](http://jsfromhell.com/classes/bignumber) *[http://www.math.rutgers.edu/~erowland/fibonacci](http://www.math.rutgers.edu/~erowland/fibonacci) *[http://bigintegers.blogspot.com/2010/11/square-division-power-square-root](http://bigintegers.blogspot.com/2010/11/square-division-power-square-root) *[http://bugs.python.org/issue3451](http://bugs.python.org/issue3451)
+这里给出一些关于该算法和改进方法的链接：  
+*<http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/>  
+*<http://www.math.rutgers.edu/~erowland/fibonacci>  
+*<http://jsfromhell.com/classes/bignumber>  
+*<http://www.math.rutgers.edu/~erowland/fibonacci>  
+*<http://bigintegers.blogspot.com/2010/11/square-division-power-square-root>  
+*<http://bugs.python.org/issue3451>
 
-以下的代码来源于：[https://gist.github.com/1032685](https://gist.github.com/1032685)
+以下的代码来源于：<https://gist.github.com/1032685>
 
 ```
 ###
@@ -19,13 +24,10 @@ Author: Jason Giedymin <jasong _a_t_ apache -dot- org>
         http://www.jasongiedymin.com
         https://github.com/JasonGiedymin
 
-This CoffeeScript Javascript Fast Fibonacci code is
-based on the python code from Robin Houston's blog.
-See below links.
+CoffeeScript Javascript 的快速 Fibonacci 代码是基于 Robin Houston 博客里的 python 代码。
+见下面的链接。
 
-A few things I want to introduce in time are implementations of
-Newtonian, Burnikel / Ziegler, and Binet's algorithms on top
-of a Big Number framework.
+我要介绍一下 Newtonian，Burnikel / Ziegle 和Binet 关于大数目框架算法的实现。
 
 Todo:
 - https://github.com/substack/node-bigint
@@ -37,7 +39,7 @@ Todo:
 MAXIMUM_JS_FIB_N = 1476
 
 fib_bits = (n) ->
-    #Represent an integer as an array of binary digits.
+    #代表一个作为二进制数字阵列的整数
 
     bits = []
     while n > 0
@@ -48,7 +50,7 @@ fib_bits = (n) ->
     return bits
 
 fibFast = (n) ->
-    #Fast Fibonacci
+    #快速 Fibonacci
 
     if n < 0
         console.log "Choose an number >= 0"
@@ -73,8 +75,7 @@ divmodBZ = () ->
 
 divmodBasic = (x, y) ->
     ###
-   Absolutely nothing special here. Maybe later versions will be Newtonian or
-   Burnikel / Ziegler _if_ possible...
+   这里并没有什么特别的。如果可能的话，也许以后的版本将是Newtonian 或者 Burnikel / Ziegler 的。
    ###
 
     return [(q = Math.floor x/y), (r = if x < y then x else x % y)]
