@@ -9,10 +9,8 @@
 使用 JavaScript 的数组方法 toString()：
 
 ```
-
-	["one", "two", "three"].toString()
-	# => 'one,two,three'
-
+["one", "two", "three"].toString()
+# => 'one,two,three'
 ```
 
 ## 讨论
