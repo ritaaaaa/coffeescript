@@ -41,7 +41,7 @@ eveningCup.properties # => { strength: 'dark', cream: true, sugar: true }
 
 ## 讨论
 
-jQuery 库使用类似的手段从每一个相关的方法中返回选择符对象，并在后续方法中通过调整选择的范围修改该对象：
+jQuery 库使用类似的手段从每一个相似的方法中返回选择符对象，并在后续方法中通过调整选择的范围修改该对象：
 
 ```
 
