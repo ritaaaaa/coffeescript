@@ -4,9 +4,9 @@
 
 你想计算出 Fibonacci 数列中的数值 N ，但需迅速地算出结果。  
 
-## 方案  
+## 解决方案  
 
-下面的方案（仍有需改进的地方）最初在 Robin Houston的博客上被提出来。  
+下面的方案（仍有需改进的地方）最初在 Robin Houston 的博客上被提出来。  
 
 这里给出一些关于该算法和改进方法的链接：  
 *<http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/>  
@@ -85,4 +85,6 @@ calc_value = fibFast(MAXIMUM_JS_FIB_N)
 diff = (new Date).getTime() - start;
 console.log "[#{calc_value}] took #{diff} ms."  
 ```
+## 讨论
+问题？
 
