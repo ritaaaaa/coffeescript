@@ -4,9 +4,9 @@
 
 你的函数将会被可变数量的参数所调用。
 
-## 方案
+## 解决方案
 
-使用*提示*。
+使用 *splat* 。
 
 ```
 loadTruck = (firstDibs, secondDibs, tooSlow...) ->
