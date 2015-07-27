@@ -9,28 +9,26 @@
 以下列方法输出函数：
 
 ```
+# simpleMath.coffee
 
-	# simpleMath.coffee
+# these methods are private
+add = (a, b) ->
+    a + b
 
-	# these methods are private
-	add = (a, b) ->
-    	a + b
+subtract = (a, b) ->
+    a - b
 
-	subtract = (a, b) ->
-    	a - b
+square = (x) ->
+    x * x
 
-	square = (x) ->
-    	x * x
+# create a namespace to export our public methods
+SimpleMath = exports? and exports or @SimpleMath = {}
 
-	# create a namespace to export our public methods
-	SimpleMath = exports? and exports or @SimpleMath = {}
-
-	# items attached to our namespace are available in Node.js as well as client browsers
-	class SimpleMath.Calculator
-    	add: add
-    	subtract: subtract
-    	square: square
-
+# items attached to our namespace are available in Node.js as well as client browsers
+class SimpleMath.Calculator
+    add: add
+    subtract: subtract
+    square: square
 ```
 
 
@@ -41,44 +39,41 @@
 在 Node.js 中，我们可以使用 “require” 命令包含我们的模块。
 
 ```
+$ node
 
-	$ node
-
-	> var SimpleMath = require('./simpleMath');
-	undefined
-	> var Calc = new SimpleMath.Calculator();
-	undefined
-	> console.log("5 + 6 = ", Calc.add(5, 6));
-	5 + 6 =  11
-	undefined
-
+> var SimpleMath = require('./simpleMath');
+undefined
+> var Calc = new SimpleMath.Calculator();
+undefined
+> console.log("5 + 6 = ", Calc.add(5, 6));
+5 + 6 =  11
+undefined
+>
 ```
 
 在网页中，我们可以通过将模块作为一个脚本嵌入其中。
 
 ```
-
-	<!DOCTYPE HTML>
-	<html lang="en-US">
-	<head>
-    	<meta charset="UTF-8">
-    	<title>SimpleMath Module Example</title>
-    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    	<script src="simpleMath.js"></script>
-    	<script>
-        	jQuery(document).ready(function    (){
-            	var Calculator = new SimpleMath.Calculator();
-            	var result = $('<li>').html("5 + 6 = " + Calculator.add(5, 6));
-            	$('#SampleResults').append(result); 
-        	});
-    	</script>
-	</head>
-	<body>
-    	<h1>A SimpleMath Example</h1>
-    	<ul id="SampleResults"></ul>
-	</body>
-	</html>
-
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>SimpleMath Module Example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="simpleMath.js"></script>
+    <script>
+        jQuery(document).ready(function    (){
+            var Calculator = new SimpleMath.Calculator();
+            var result = $('<li>').html("5 + 6 = " + Calculator.add(5, 6));
+            $('#SampleResults').append(result); 
+        });
+    </script>
+</head>
+<body>
+    <h1>A SimpleMath Example</h1>
+    <ul id="SampleResults"></ul>
+</body>
+</html>
 ```
 
 输出结果：
