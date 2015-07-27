@@ -1,7 +1,7 @@
-## 计算出月球的相位-Calculate Phase of the Moon for a Date
-### 问题
-你想找出现象月球的相位。
-### 方案
+# 计算月球的相位
+## 问题
+你想找出月球的相位。
+## 解决方案
 以下代码提供了一种计算给出日期的月球相位计算方案：
 ```
 # moonPhase.coffee
@@ -108,9 +108,9 @@ class MoonPhase.Calculator
         jd = jdn date 
         getMoonPhase( moonElong jd )
 ```
-### 讨论
-此代码显示一个月球相位计算器对象的方法有两种。  
-计算器-> getmoonphase 将返回一个文本表示的日期的月球相位。  
+## 讨论
+此代码显示一个月球相位计算器对象的方法有两种。计算器 -> getmoonphase 将返回一用个文本表示的日期的月球相位。  
+
 这可以用在浏览器和 Node.js 中。  
 ```
 $ node
