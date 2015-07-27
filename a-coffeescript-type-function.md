@@ -9,7 +9,7 @@
 使用下面这个type函数
 
 ```
-	type = (obj) ->
+type = (obj) ->
     if obj == undefined or obj == null
       return String obj
     classToType = {
