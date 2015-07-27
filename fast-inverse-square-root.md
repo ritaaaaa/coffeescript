@@ -4,7 +4,7 @@
 
 你想[快速](https://en.wikipedia.org/wiki/Fast_inverse_square_root)计算某数的平方根倒数。
 
-## 方案
+## 解决方案
 
 在 Quake Ⅲ Arena 的[源代码](ftp://ftp.idsoftware.com/idstuff/source/quake3-1.32b-source.zip)中，这个奇怪的算法对一个幻数进行整数运算，来计算平方根倒数的浮点近似值。
 
