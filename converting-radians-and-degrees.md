@@ -4,7 +4,7 @@
 
 你需要实现弧度和度之间的转换。
 
-## 方案
+## 解决方案
 
 使用 JavaScript 的 Math.PI 和一个简单的公式来转换两者。
 
@@ -23,4 +23,5 @@ degreesToRadians = (degrees) ->
 degreesToRadians(1)
 # => 0.017453292519943295
 ```
-
+## 讨论
+问题？
