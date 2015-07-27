@@ -11,28 +11,30 @@
 
 ```
 
-	class CoffeeCup
-    properties:
-        strength: 'medium'
-        cream: false
-        sugar: false
+class CoffeeCup
+    constructor:  ->
+        @properties=
+            strength: 'medium'
+            cream: false
+            sugar: false
     strength: (newStrength) ->
         @properties.strength = newStrength
-        @
+        this
     cream: (newCream) ->
         @properties.cream = newCream
-        @
+        this
     sugar: (newSugar) ->
         @properties.sugar = newSugar
-        @
+        this
 
-	morningCup = new CoffeeCup()
+morningCup = new CoffeeCup()
 
-	morningCup.properties # => { strength: 'medium', cream: false, sugar: false }
+morningCup.properties # => { strength: 'medium', cream: false, sugar: false }
 
-	eveningCup = new CoffeeCup().strength('dark').cream(true).sugar(true)
+eveningCup = new CoffeeCup().strength('dark').cream(true).sugar(true)
 
-	eveningCup.properties # => { strength: 'dark', cream: true, sugar: true }
+eveningCup.properties # => { strength: 'dark', cream: true, sugar: true }
+
 
 ```
 
