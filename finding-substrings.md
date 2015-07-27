@@ -6,21 +6,19 @@
 
 ## 解决方案
 
-分别使用 JavaScript 的 indexOf() 和 lastIndexOf() 方法查找字符串第一次和最后一次出现的位置。语法: string.indexOf searchstring,start
+分别使用 JavaScript 的 indexOf() 和 lastIndexOf() 方法查找字符串第一次和最后一次出现的位置。语法: string.indexOf searchstring, start
 
 ```
+message = "This is a test string. This has a repeat or two. This might even have a third."
+message.indexOf "This", 0
+# => 0
 
-	message = "This is a test string. This has a repeat or two. This might even have a third."
-	message.indexOf "This", 0
-	# => 0
-	
-	# 修改 start 变量
-	message.indexOf "This", 5
-	# => 23
-	
-	message.lastIndexOf "This"
-	# => 49
+# Modifying the start parameter
+message.indexOf "This", 5
+# => 23
 
+message.lastIndexOf "This"
+# => 49
 ```
 
 ## 讨论
