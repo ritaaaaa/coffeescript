@@ -20,7 +20,12 @@
 
 注意：你需要一个支持[类型数组](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)的浏览器
 
-参考文献： 1. <ftp://ftp.idsoftware.com/idstuff/source/quake3-1.32b-source.zip> 2. <http://www.lomont.org/Math/Papers/2003/InvSqrt.pdf> 3. <http://en.wikipedia.org/wiki/Newton%27s_method> 4. <https://developer.mozilla.org/en/JavaScripttypedarrays> 5. <http://en.wikipedia.org/wiki/Fastinversesquare_root> 
+参考文献：   
+1. <ftp://ftp.idsoftware.com/idstuff/source/quake3-1.32b-source.zip>   
+2. <http://www.lomont.org/Math/Papers/2003/InvSqrt.pdf>  
+3. <http://en.wikipedia.org/wiki/Newton%27s_method>  
+4. <https://developer.mozilla.org/en/JavaScripttypedarrays>  
+5. <http://en.wikipedia.org/wiki/Fastinversesquare_root>  
 
 以下的代码来源于：<https://gist.github.com/1036533>
 
@@ -31,30 +36,22 @@ Author: Jason Giedymin <jasong _a_t_ apache -dot- org>
         http://www.jasongiedymin.com
         https://github.com/JasonGiedymin
 
-Appearing in the Quake III Arena source code[1], this strange algorithm uses
-integer operations along with a 'magic number' to calculate floating point
-approximation values of inverse square roots[5].
+在 Quake Ⅲ Arena 的源代码 [1] 中，这个奇怪的算法对一个幻数进行整数运算，来计算平方根倒数的浮点近似值 [5]。
 
-In this CoffeeScript variant I supply the original classic, and newer optimal
-32 bit magic numbers found by Chris Lomont[2]. Also supplied is the 64-bit
-sized magic number.
+在 CoffeeScript 中，我使用经典原始的变量，以及由 Chris Lomont [2] 发现的新的最优 32 位幻数。除此之外，我还使用 64 位大小的幻数。
 
-Another feature included is the ability to alter the level of precision.
-This is done by controlling the number of iterations for performing Newton's
-method[3].
+另一特征是可以通过控制牛顿迭代法 [3] 的迭代次数来改变其精确度。
 
-Depending on the machine and level of precision this algorithm may still
-provide performance increases over the classic.
+相比于传统的，该算法在性能上更胜一筹，归功于使用的机器及其精确度。
 
-To run this, compile the script with coffee:
-    coffee -c <this script>.coffee
+运行的时候使用 coffee 来编译 script： 
+coffee -c script.coffee
 
-Then copy & paste the compiled js code in to the JavaScript console of your
-browser.
+然后复制粘贴编译的 JS 代码到浏览器的 JavaScript 控制台。
 
-Note: You will need a browser which supports typed-arrays[4].
+注意：你需要一个支持类型数组 [4] 的浏览器
 
-References: 
+参考文献： 
 [1] ftp://ftp.idsoftware.com/idstuff/source/quake3-1.32b-source.zip
 [2] http://www.lomont.org/Math/Papers/2003/InvSqrt.pdf
 [3] http://en.wikipedia.org/wiki/Newton%27s_method
@@ -68,8 +65,8 @@ approx_const_32 = 0x5f375a86 # See [2]
 approx_const_64 = 0x5fe6eb50c7aa19f9 # See [2]
 
 fastInvSqrt_typed = (n, precision=1) ->
-    # Using typed arrays. Right now only works in browsers.
-    # Node.JS version coming soon.
+    # 使用类型数组。现在只能在浏览器中操作。
+    # Node.JS 的版本即将推出。
 
     y = new Float32Array(1)
     i = new Int32Array(y.buffer)
@@ -82,7 +79,7 @@ fastInvSqrt_typed = (n, precision=1) ->
     
     return y[0]
 
-### Sample single runs ###
+### 单次运行示例###
 testSingle = () ->
     example_n = 10
 
@@ -94,4 +91,3 @@ testSingle = () ->
 
 testSingle()
 ```
-
