@@ -25,5 +25,5 @@ filtered_array = array.filter gt_five
 # => [6,7,8,9,10]
 ```
 ### 讨论
-这个方法与 Ruby 的Array 的 #select 方法类似。
+这个方法与 Ruby 的 Array 的 #select 方法类似。
 
